@@ -1,9 +1,9 @@
 package com.github.snowparrot.pacalc;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 
-public class calcActivity extends AppCompatActivity {
+public class calcActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
