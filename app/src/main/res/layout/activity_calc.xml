@@ -76,6 +76,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/transparent"
+                android:src="@drawable/divide"
                 app:srcCompat="@drawable/divide" />
 
         </LinearLayout>
@@ -122,6 +123,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/transparent"
+                android:src="@drawable/multiply"
                 app:srcCompat="@drawable/multiply" />
 
         </LinearLayout>
@@ -168,6 +170,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/transparent"
+                android:src="@drawable/subtract"
                 app:srcCompat="@drawable/subtract" />
 
         </LinearLayout>
@@ -213,6 +216,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0"
                 android:background="@color/transparent"
+                android:src="@drawable/add"
                 app:srcCompat="@drawable/add" />
 
         </LinearLayout>
@@ -227,6 +231,7 @@
         android:background="@color/transparent"
         android:paddingRight="45dp"
         android:paddingTop="130dp"
+        android:src="@drawable/equal"
         app:srcCompat="@drawable/equal" />
 
 </RelativeLayout>
