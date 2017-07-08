@@ -18,7 +18,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="155dp"
+            android:layout_height="0dp"
+            android:layout_weight="2"
             android:background="@color/colorAccent"
             android:orientation="vertical">
 
@@ -36,7 +37,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="102dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:elevation="1dp"
             android:orientation="horizontal">
 
@@ -83,7 +85,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="102dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:elevation="1dp"
             android:orientation="horizontal">
 
@@ -130,7 +133,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="102dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:elevation="1dp"
             android:orientation="horizontal">
 
@@ -177,48 +181,39 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="102dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:elevation="1dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:background="@color/transparent"
                 android:text="3"
                 android:textColor="@android:color/background_dark"
                 android:textSize="30sp" />
 
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:src="@drawable/subtract"
-                app:srcCompat="@drawable/subtract" />
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/transparent"
-                android:text="1"
-                android:textColor="@android:color/background_dark"
-                android:textSize="30sp" />
-
             <Button
                 android:id="@+id/button3"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/transparent"
                 android:text="2"
                 android:textColor="@android:color/background_dark"
                 android:textSize="30sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:src="@drawable/subtract"
+                app:srcCompat="@drawable/subtract" />
         </LinearLayout>
 
     </LinearLayout>
@@ -230,7 +225,7 @@
         android:layout_alignParentRight="true"
         android:background="@color/transparent"
         android:paddingRight="45dp"
-        android:paddingTop="130dp"
+        android:paddingTop="135dp"
         android:src="@drawable/equal"
         app:srcCompat="@drawable/equal" />
 
