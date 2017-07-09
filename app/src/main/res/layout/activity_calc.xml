@@ -206,7 +206,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="0"
                 android:background="@color/transparent"
-                android:text="9"
+                android:text="0"
                 android:textColor="@android:color/background_dark"
                 android:textSize="30sp" />
 
