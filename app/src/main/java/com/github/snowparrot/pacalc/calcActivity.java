@@ -2,11 +2,15 @@ package com.github.snowparrot.pacalc;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class calcActivity extends Activity {
+
+    TextView numberView;
+    String numberViewContent = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +36,8 @@ public class calcActivity extends Activity {
 
         Button clearButton = (Button)findViewById(R.id.clearButton);
 
-        TextView numberView = (TextView)findViewById(R.id.numberView);
-
+        numberView = (TextView)findViewById(R.id.numberView);
+        numberView.setText(numberViewContent);
 
 
         Button0.setOnClickListener(getOCLfromNumber(0));
@@ -50,8 +54,15 @@ public class calcActivity extends Activity {
     }
 
 
-    private Button.OnClickListener getOCLfromNumber(int Number)
+    private Button.OnClickListener getOCLfromNumber(final int Number)
     {
-        return null;
+
+        return new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                numberViewContent += Integer.toString(Number);
+                numberView.setText(numberViewContent);
+            }
+        };
     }
 }
