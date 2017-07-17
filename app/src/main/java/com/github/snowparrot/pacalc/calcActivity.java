@@ -1,16 +1,24 @@
 package com.github.snowparrot.pacalc;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class calcActivity extends Activity {
 
     TextView numberView;
     String numberViewContent = "";
+    operations usedOperation;
+
+
+    Long firstNumber = 0L;
+    Boolean typingSecondNumber = false; // zeigt, ob erste oder zweite Number eingegeben wird
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +42,11 @@ public class calcActivity extends Activity {
         ImageButton subButton = (ImageButton)findViewById(R.id.subtractButton);
         ImageButton addButton = (ImageButton)findViewById(R.id.addButton);
 
+
+
         Button clearButton = (Button)findViewById(R.id.clearButton);
+
+
 
         numberView = (TextView)findViewById(R.id.numberView);
         numberView.setText(numberViewContent);
@@ -51,6 +63,24 @@ public class calcActivity extends Activity {
         Button8.setOnClickListener(getOCLfromNumber(8));
         Button9.setOnClickListener(getOCLfromNumber(9));
 
+        multButton.setOnClickListener(getOCLfromOperation(operations.MULTIPLY));
+        addButton.setOnClickListener(getOCLfromOperation(operations.ADD));
+        subButton.setOnClickListener(getOCLfromOperation(operations.SUBTRACT));
+        divideButton.setOnClickListener(getOCLfromOperation(operations.DIVIDE));
+
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                numberViewContent = "";
+                numberView.setText("");
+                typingSecondNumber = false;
+            }
+
+        });
+
+
+
+
     }
 
 
@@ -64,5 +94,30 @@ public class calcActivity extends Activity {
                 numberView.setText(numberViewContent);
             }
         };
+    }
+
+
+    private Button.OnClickListener getOCLfromOperation(final operations op)
+    {
+        return new Button.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                if (typingSecondNumber){
+                    Context context = getApplicationContext();
+                    CharSequence text = "Nur eine Operation möglich";
+                    int duration = Toast.LENGTH_SHORT;
+                    Toast toast = Toast.makeText(context, text, duration);
+                    toast.show();
+                }
+                else {
+                    firstNumber = Long.getLong(numberViewContent);
+                    numberViewContent = "";
+                    typingSecondNumber = true;
+                    numberView.setText(numberViewContent);
+                    usedOperation = op;
+                }
+            }
+        };
+
     }
 }
