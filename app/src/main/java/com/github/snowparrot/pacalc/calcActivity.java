@@ -42,7 +42,7 @@ public class calcActivity extends Activity {
         ImageButton subButton = (ImageButton)findViewById(R.id.subtractButton);
         ImageButton addButton = (ImageButton)findViewById(R.id.addButton);
 
-
+        ImageButton equalButton = findViewById(R.id.equalButton);
 
         Button clearButton = (Button)findViewById(R.id.clearButton);
 
@@ -78,19 +78,30 @@ public class calcActivity extends Activity {
 
         });
 
+        equalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                long usedSecondNumber = Long.valueOf(numberViewContent);
+
+                numberView.setText(calculate(firstNumber, usedOperation, usedSecondNumber));
+                numberViewContent = "";
+                typingSecondNumber = false;
+            }
+        });
 
 
 
     }
 
 
-    private Button.OnClickListener getOCLfromNumber(final int Number)
+    private Button.OnClickListener getOCLfromNumber(final long Number)
     {
 
         return new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
-                numberViewContent += Integer.toString(Number);
+                numberViewContent += Long.toString(Number);
                 numberView.setText(numberViewContent);
             }
         };
@@ -110,7 +121,7 @@ public class calcActivity extends Activity {
                     toast.show();
                 }
                 else {
-                    firstNumber = Long.getLong(numberViewContent);
+                    firstNumber = Long.valueOf(numberViewContent);
                     numberViewContent = "";
                     typingSecondNumber = true;
                     numberView.setText(numberViewContent);
@@ -119,5 +130,23 @@ public class calcActivity extends Activity {
             }
         };
 
+    }
+
+
+    private String calculate(long firstNumber, operations op, long secondNumber)
+    {
+        switch (op) {
+            case ADD:
+                return Long.toString(firstNumber + secondNumber);
+            case MULTIPLY:
+                return Long.toString(firstNumber * secondNumber);
+            case SUBTRACT:
+                return Long.toString(firstNumber - secondNumber);
+            case DIVIDE:
+                float firstNumberfl = firstNumber;
+                float secondNumberfl = secondNumber;
+                return Float.toString(firstNumberfl / secondNumberfl);
+        }
+        return "ERROR";
     }
 }
