@@ -17,7 +17,7 @@ public class calcActivity extends Activity {
 
 
     Long firstNumber = 0L;
-    Boolean typingSecondNumber = false; // zeigt, ob erste oder zweite Number eingegeben wird
+    Boolean IsUsertypingSecondNumber = false; // zeigt, ob erste oder zweite Number eingegeben wird
 
 
     @Override
@@ -73,7 +73,7 @@ public class calcActivity extends Activity {
             public void onClick(View view) {
                 numberViewContent = "";
                 numberView.setText("");
-                typingSecondNumber = false;
+                IsUsertypingSecondNumber = false;
             }
 
         });
@@ -81,12 +81,12 @@ public class calcActivity extends Activity {
         equalButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                long usedSecondNumber = Long.valueOf(numberViewContent);
-
-                numberView.setText(calculate(firstNumber, usedOperation, usedSecondNumber));
-                numberViewContent = "";
-                typingSecondNumber = false;
+            if (IsUsertypingSecondNumber) {
+                   long usedSecondNumber = Long.valueOf(numberViewContent);
+                    numberView.setText(calculate(firstNumber, usedOperation, usedSecondNumber));
+                    numberViewContent = "";
+                    IsUsertypingSecondNumber = false;
+            }
             }
         });
 
@@ -113,7 +113,7 @@ public class calcActivity extends Activity {
         return new Button.OnClickListener(){
             @Override
             public void onClick(View view) {
-                if (typingSecondNumber){
+                if (IsUsertypingSecondNumber){
                     Context context = getApplicationContext();
                     CharSequence text = "Nur eine Operation möglich";
                     int duration = Toast.LENGTH_SHORT;
@@ -123,7 +123,7 @@ public class calcActivity extends Activity {
                 else {
                     firstNumber = Long.valueOf(numberViewContent);
                     numberViewContent = "";
-                    typingSecondNumber = true;
+                    IsUsertypingSecondNumber = true;
                     numberView.setText(numberViewContent);
                     usedOperation = op;
                 }
