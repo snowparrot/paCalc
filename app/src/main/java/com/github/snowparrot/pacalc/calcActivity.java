@@ -26,29 +26,29 @@ public class calcActivity extends Activity {
         setContentView(R.layout.activity_calc);
 
 
-        Button Button0 = (Button)findViewById(R.id.Button0);
-        Button Button1 = (Button)findViewById(R.id.Button1);
-        Button Button2 = (Button)findViewById(R.id.Button2);
-        Button Button3 = (Button)findViewById(R.id.Button3);
-        Button Button4 = (Button)findViewById(R.id.Button4);
-        Button Button5 = (Button)findViewById(R.id.Button5);
-        Button Button6 = (Button)findViewById(R.id.Button6);
-        Button Button7 = (Button)findViewById(R.id.Button7);
-        Button Button8 = (Button)findViewById(R.id.Button8);
-        Button Button9 = (Button)findViewById(R.id.Button9);
+        Button Button0 = findViewById(R.id.Button0);
+        Button Button1 = findViewById(R.id.Button1);
+        Button Button2 = findViewById(R.id.Button2);
+        Button Button3 = findViewById(R.id.Button3);
+        Button Button4 = findViewById(R.id.Button4);
+        Button Button5 = findViewById(R.id.Button5);
+        Button Button6 = findViewById(R.id.Button6);
+        Button Button7 = findViewById(R.id.Button7);
+        Button Button8 = findViewById(R.id.Button8);
+        Button Button9 = findViewById(R.id.Button9);
 
-        ImageButton multButton = (ImageButton)findViewById(R.id.multiplyButton);
-        ImageButton divideButton = (ImageButton)findViewById(R.id.divideButton);
-        ImageButton subButton = (ImageButton)findViewById(R.id.subtractButton);
-        ImageButton addButton = (ImageButton)findViewById(R.id.addButton);
+        ImageButton multButton = findViewById(R.id.multiplyButton);
+        ImageButton divideButton = findViewById(R.id.divideButton);
+        ImageButton subButton = findViewById(R.id.subtractButton);
+        ImageButton addButton = findViewById(R.id.addButton);
 
         ImageButton equalButton = findViewById(R.id.equalButton);
 
-        Button clearButton = (Button)findViewById(R.id.clearButton);
+        Button clearButton = findViewById(R.id.clearButton);
 
 
 
-        numberView = (TextView)findViewById(R.id.numberView);
+        numberView = findViewById(R.id.numberView);
         numberView.setText(numberViewContent);
 
 
